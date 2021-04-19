@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# For .php & .html URL's:
+
+RewriteRule ^user/([0-9a-zA-Z]+)/([0-9]+)$ sea.php?id=$1&page=$2 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
